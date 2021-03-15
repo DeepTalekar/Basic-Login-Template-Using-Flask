@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Failure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>You have tried 3 times</h1>
+    <p> Try to <a href="/">login</a> again within <span id="timer">{{timeout}}</span> seconds</p>
+    <script>
+        var timer = document.getElementById("timer");
+        var time = parseInt(timer.innerText);
+
+        setInterval(
+            function () {
+                if (time > 0) {
+                    time -= 1;
+                    timer.innerText =  time;
+                }
+            },
+            1000
+        );
+    </script>
+</body>
+
+</html>

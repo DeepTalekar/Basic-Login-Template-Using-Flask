@@ -1,0 +1,238 @@
+/*
+ For making Borders Gradient:
+ https://dev.to/rumansaleem/gradient-borders-with-css-3mnk 
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@media(max-width: 767px){
+    .col-sm-1{width: 8.33333%;}
+    .col-sm-2{width: 16.6667%;}
+    .col-sm-3{width: 25%;}
+    .col-sm-4{width: 33.3333%;}
+    .col-sm-5{width: 41.6666%;}
+    .col-sm-6{width: 50%;}
+    .col-sm-7{width: 58.3333%;}
+    .col-sm-8{width: 66.66666%;}
+    .col-sm-9{width: 75%;}
+    .col-sm-10{width: 83.3333%;}
+    .col-sm-11{width: 91.66666%;}
+    .col-sm-12{width: 100%}
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+    .col-md-1{width: 8.33333%;}
+    .col-md-2{width: 16.6667%;}
+    .col-md-3{width: 25%;}
+    .col-md-4{width: 33.3333%;}
+    .col-md-5{width: 41.6666%;}
+    .col-md-6{width: 50%;}
+    .col-md-7{width: 58.3333%;}
+    .col-md-8{width: 66.66666%;}
+    .col-md-9{width: 75%;}
+    .col-md-10{width: 83.3333%;}
+    .col-md-11{width: 91.66666%;}
+    .col-md-12{width: 100%}
+}
+
+@media(min-width: 992px) and (max-width: 1199px){
+    .col-lg-1{width: 8.33333%;}
+    .col-lg-2{width: 16.6667%;}
+    .col-lg-3{width: 25%;}
+    .col-lg-4{width: 33.3333%;}
+    .col-lg-5{width: 41.6666%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-7{width: 58.3333%;}
+    .col-lg-8{width: 66.66666%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-10{width: 83.3333%;}
+    .col-lg-11{width: 91.66666%;}
+    .col-lg-12{width: 100%}
+}
+
+@media(min-width: 1200px){
+    .col-xl-1{width: 8.33333%;}
+    .col-xl-2{width: 16.6667%;}
+    .col-xl-3{width: 25%;}
+    .col-xl-4{width: 33.3333%;}
+    .col-xl-5{width: 41.6666%;}
+    .col-xl-6{width: 50%;}
+    .col-xl-7{width: 58.3333%;}
+    .col-xl-8{width: 66.66666%;}
+    .col-xl-9{width: 75%;}
+    .col-xl-10{width: 83.3333%;}
+    .col-xl-11{width: 91.66666%;}
+    .col-xl-12{width: 100%}
+}
+
+.container{
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* margin: 5rem 0; */
+    background: #f2f2f2;
+}
+
+.formContainer{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.formContainer h1{
+    font-size: 30px;
+    color: #333333;
+    margin: 0;
+    padding-bottom: 30px;
+}
+.formContainer .md-48 {
+    display: block;
+    font-size: 75px;
+    margin: 3rem 0;
+}
+
+.login-btn{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    margin: 5rem 0 0 0;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: background 5s ease-in-out,
+                box-shadow .5s ease-in;
+}
+
+.login-btn:focus,
+.login-btn:hover{
+    background-image: linear-gradient(90deg, rgba(252,70,107,1) 0%,  rgba(63,94,251,1) 100%);
+    box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.form{
+    width: 100%;
+    text-align: left;
+}
+
+.form input{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding-top: 20px;
+    /* border-bottom: 1px solid blue; */
+}
+
+.name-section label, .password-section label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.label-name{
+    color: grey;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    text-align: left;
+    pointer-events: none;
+    /* border-bottom: 1px solid black; */
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    border-image-slice: 5;
+    /* overflow: hidden; */
+}
+.label-name::after{
+    content: "";
+    display: none;
+    position: absolute;
+    width: 100%;
+
+    /* Try this: */
+    /* border-bottom: 3px solid black;  */
+
+    left: 0;
+    bottom: -2px;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+}
+
+.content-name{
+    position: absolute;
+    top: -20px;
+    transition: all 0.5s;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name{
+    display: block;
+    transform: translateY(-150%);
+    font-size: 14px;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after{
+    display: inline;
+    transform: translateX(0%);
+}
+
+.other-option{
+    text-align: center;
+    color: #333333;
+    margin: 5rem 0 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.other-option a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.other-option a:hover{
+    color: #6a7dfe;
+}
+
+
+.validate{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color:red;
+    text-align: center;
+    font-size: 16px;
+    background-color: bisque;
+    padding: 1rem 0;
+    margin: 0 0 2rem 0;
+}
+.validate p{
+    margin: 0 0 0 10px;
+}

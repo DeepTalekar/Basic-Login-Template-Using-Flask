@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/Flask/Microservices/Main/static/styles.css"> -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="formContainer col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            
+            {% if error %}
+            <div class="validate">
+                    <span class="material-icons">
+                        error
+                    </span>
+                    <p>
+                        Invalid Username or Password
+                    </p>
+            </div>
+            {% endif %}
+
+            <h1>Welcome</h1>
+            <i class="material-icons md-48">account_circle</i>
+            <form action="/authenticator" method="POST" class="form">
+                <div class="name-section">
+                    <input type="text" name="name" autocomplete="off" required>
+                    <label for="name" class="label-name">
+                        <span class="content-name">Username</span>
+                    </label>
+                </div>                
+                
+                <div class="password-section">                    
+                    <input type="password" name="pass" required>
+                    <label for="pass" class="label-name">
+                        <span class="content-name">Password</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="login-btn">LOGIN</button>
+
+                <div class="other-option">
+                    <span>
+                        Don't have an account?
+                    </span>
+                    <a href="#">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
